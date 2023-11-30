@@ -11,6 +11,7 @@ app.set("views", "./src/views");/*a donde van a estar las vistas que vamos a uti
 app.use(expressLayouts);
 app.set("layout","layouts/layout");
 
+app.use(express.urlencoded({ extended: false}));
 
 app.use(require('./src/routers/tareasRouter')); 
 
