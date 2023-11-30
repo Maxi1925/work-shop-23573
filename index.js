@@ -1,12 +1,12 @@
 const express = require ("express");
 const app = express();
-
+const path = requiere ("path");
 const expressLayouts = require('express-ejs-layouts');
 
-app.use(express.static("public"));/*para decir que cosas son publicas*/
+app.use(express.static(path.join(__dirname,"public")));/*para decir que cosas son publicas*/
 
 app.set("view engine" , "ejs");
-app.set("views", "./src/views");/*a donde van a estar las vistas que vamos a utilizar*/
+app.set("views", path.join(__dirname, "/src/views"));/*a donde van a estar las vistas que vamos a utilizar*/
 
 app.use(expressLayouts);
 app.set("layout","layouts/layout");
